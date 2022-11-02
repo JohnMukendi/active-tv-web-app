@@ -2,6 +2,7 @@ import React,{ useState } from "react";
 import { Box } from "@mui/system";
 import Link from "next/link";
 import Form from "./Form";
+import { Typography } from "@mui/material";
 
 import CorridorStore from "./CorridorStore";
 
@@ -19,48 +20,50 @@ const FormTwo = () => {
     return (  
         <Box className={"active-tv-font"} sx={styles.container}>
         <Box style={{color:'white'}} sx={styles.contentBox}>
-        <h1 style={{fontSize:'20px'}}>Contact Us</h1>
-                 <p style={{fontSize:'8px'}}>Please check out our FAQ pages to see if your answer is there first, if not use one of the contact methods below.</p>
+        <Typography className={"active-tv-font"} style={{fontSize:'20px'}}>Contact Us</Typography>
+                 <Typography className={"active-tv-font"} style={{fontSize:'8px',marginTop:'10px'}}>Please check out our FAQ pages to see if your answer is there first, if not use one of the contact methods below.</Typography>
                  <Link href='/'>
-                 <p style={{fontSize:'8px',color:'yellow'}}>Check our FAQ for your issue.</p>
+                 <Typography className={"active-tv-font"} style={{fontSize:'8px',color:'yellow',marginTop:'10px'}}>Check our FAQ for your issue.</Typography>
                  </Link>
-                 <br/>
-                 <p style={{fontSize:'8px'}}>Please select the appropriate service you wish to contact:</p>
+                 
+                 <Typography className={"active-tv-font"} style={{fontSize:'8px',marginTop:'40px'}}>Please select the appropriate service you wish to contact:</Typography>
                  
                  <Box style={{fontSize:'8px'}}>
-                 <input onClick={() => setForm('form1')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Website Feedback
-                 <br/>
-                 <br/>
-                 <input onClick={() => setForm('form3')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Corridor Digital Store
-                 <br/>
-                 <br/>
-                 <input onClick={() => setForm('form1')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Business Enquiries
-                 <br/>
-                 <br/>
-                 <input onClick={() => setForm('form2')}   style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Copyright Infringement
+                 <Box>
+
+<input onClick={() => setForm('form1')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Website Feedback
+</Box>
+<Box>
+
+<input onClick={() => setForm('form3')} style={{margin:"20px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Active TV Store
+</Box>
+<Box>
+
+<input onClick={() => setForm('form1')} style={{margin:"20px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Business Enquiries
+</Box>
+<Box>
+
+<input onClick={() => setForm('form2')} style={{margin:"20px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Copyright Infringement
+</Box>
                   
                  </Box>
           <Box style={{margin:'50px 0 0 0'}}>
 
-            <p style={{fontSize:'8px'}}>Have you spotted a piece of our content being uploaded to a page not owned by Corridor Digital?</p>
-              <br/>
-          <p style={{fontSize:'8px'}}>Email Address</p>
-            <input style={{width:'100%',border:'1px white solid',backgroundColor:'black',height:'40px',color:'white',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="Enter your email address"></input>
-            <br/>
-            <br/>
-            <p style={{fontSize:'8px'}}>Name</p>
-            <input style={{width:'100%',border:'1px white solid',backgroundColor:'black',height:'40px',color:'white',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="Enter your full name"></input>
-            <br/>
-            <br/>
-            <p style={{fontSize:'8px'}}>Subject</p>
-            <input style={{width:'100%',border:'1px white solid',backgroundColor:'black',height:'40px',color:'white',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="Subject"></input>
-            <br/>
-            <br/>
-            <p style={{fontSize:'8px'}}>Urls of offending videos (1 per line)</p>
-            <input style={{width:'100%',border:'1px white solid',backgroundColor:'white',height:'80px',color:'black',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="Url's"></input>
-            <br/>
-            <br/>
-            <button style={{backgroundColor:'yellow',width:'100%',height:"40px",border:'none'}}>Sumit</button>
+            <Typography className="active-tv-font" style={{fontSize:'8px'}}>Have you spotted a piece of our content being uploaded to a page not owned by Corridor Digital?</Typography>
+             
+              <Typography className="active-tv-font" style={{fontSize:'8px',margin:'30px 0 0 0'}}>Email Address</Typography>
+                <input style={{width:'100%',border:'1px white solid',backgroundColor:'black',height:'40px',color:'white',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="Enter your email address"></input>
+                
+                <Typography className="active-tv-font" style={{fontSize:'8px',margin:'30px 0 0 0'}}>Name</Typography>
+                <input style={{width:'100%',border:'1px white solid',backgroundColor:'black',height:'40px',color:'white',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="Enter your full name"></input>
+                
+                <Typography className="active-tv-font" style={{fontSize:'8px',margin:'30px 0 0 0'}}>Subject</Typography>
+                <input style={{width:'100%',border:'1px white solid',backgroundColor:'black',height:'40px',color:'white',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="Subject"></input>
+                
+                <Typography className="active-tv-font" style={{fontSize:'8px',margin:'30px 0 0 0'}}>Urls of offending videos (1 per line)</Typography>
+                <input style={{width:'100%',border:'1px white solid',backgroundColor:'white',height:'80px',color:'black',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="What is your message?"></input>
+                
+                <button style={{backgroundColor:'yellow',width:'100%',height:"40px",border:'none',margin:'30px 0 0 0'}}>Sumit</button>
         </Box>
           </Box>
             
@@ -79,14 +82,16 @@ const styles = {
       alignItems: "center",
       width: "100%",
       justifyContent: "center",
-      padding:'30px 0'
+      // padding:'30px 0'
+      background: "url('login-bg.jpg')",
+      padding:'90px 0'
     },
     contentBox: {
       width: "700px",
-      background: "black",
-      opacity: 0.99,
-      height: "950px",
-      padding: "100px 90px",
+      background: "rgba(0,0,0,0.5)",
+      opacity: 0.7,
+      height: "1000px",
+      padding: "110px 90px",
       flexDirection: "column",
       
     //   color:"white",

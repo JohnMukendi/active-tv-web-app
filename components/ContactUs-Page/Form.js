@@ -3,12 +3,13 @@ import { Box } from "@mui/system";
 import Link from "next/link";
 import FormTwo from "./FormTwo";
 import CorridorStore from "./CorridorStore";
+import { Typography } from "@mui/material";
 
 
 const Form = () => {
   const [form,setForm] = useState('no form')
   switch(form){
-    case 'form1':
+    
     
 
     case 'form2':
@@ -22,45 +23,47 @@ const Form = () => {
     
         <Box className={"active-tv-font"} sx={styles.container}>
             <Box style={{color:'white'}} sx={styles.contentBox}>
-            <h1 style={{fontSize:'20px'}}>Contact Us</h1>
-                 <p style={{fontSize:'8px'}}>Please check out our FAQ pages to see if your answer is there first, if not use one of the contact methods below.</p>
+            <Typography className={"active-tv-font"} style={{fontSize:'20px'}}>Contact Us</Typography>
+                 <Typography className={"active-tv-font"} style={{fontSize:'8px',marginTop:'10px'}}>Please check out our FAQ pages to see if your answer is there first, if not use one of the contact methods below.</Typography>
                  <Link href='/'>
-                 <p style={{fontSize:'8px',color:'yellow'}}>Check our FAQ for your issue.</p>
+                 <Typography className={"active-tv-font"} style={{fontSize:'8px',color:'yellow',marginTop:'10px'}}>Check our FAQ for your issue.</Typography>
                  </Link>
-                 <br/>
-                 <p style={{fontSize:'8px'}}>Please select the appropriate service you wish to contact:</p>
+            
+                 <Typography className={"active-tv-font"} style={{fontSize:'8px',marginTop:'40px'}}>Please select the appropriate service you wish to contact:</Typography>
                  
                  <Box style={{fontSize:'8px'}}>
-                 <input onClick={() => setForm('form1')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Website Feedback
-                 <br/>
-                 <br/>
-                 <input onClick={() => setForm('form3')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Corridor Digital Store
-                 <br/>
-                 <br/>
-                 <input onClick={() => setForm('form1')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Business Enquiries
-                 <br/>
-                 <br/>
-                 <input onClick={() => setForm('form2')}  style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Copyright Infringement
+                 <Box className={"active-tv-font"} >
+
+<input onClick={() => setForm('form1')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Website Feedback
+</Box>
+<Box className={"active-tv-font"} >
+
+<input onClick={() => setForm('form3')} style={{margin:"20px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Active TV Store
+</Box>
+<Box className={"active-tv-font"} >
+
+<input onClick={() => setForm('form1')} style={{margin:"20px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Business Enquiries
+</Box>
+<Box className={"active-tv-font"} >
+
+<input onClick={() => setForm('form2')} style={{margin:"20px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Copyright Infringement
+</Box>
                   
                  </Box>
                  <Box style={{margin:'50px 0 0 0'}}>
-                                  <p style={{fontSize:'8px'}}>Email Address</p>
+                                  <Typography className="active-tv-font" style={{fontSize:'8px'}}>Email Address</Typography>
                 <input style={{width:'100%',border:'1px white solid',backgroundColor:'black',height:'40px',color:'white',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="Enter your email address"></input>
-                <br/>
-                <br/>
-                <p style={{fontSize:'8px'}}>Name</p>
+                
+                <Typography className="active-tv-font" style={{fontSize:'8px',margin:'30px 0 0 0'}}>Name</Typography>
                 <input style={{width:'100%',border:'1px white solid',backgroundColor:'black',height:'40px',color:'white',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="Enter your full name"></input>
-                <br/>
-                <br/>
-                <p style={{fontSize:'8px'}}>Subject</p>
+                
+                <Typography className="active-tv-font" style={{fontSize:'8px',margin:'30px 0 0 0'}}>Subject</Typography>
                 <input style={{width:'100%',border:'1px white solid',backgroundColor:'black',height:'40px',color:'white',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="Subject"></input>
-                <br/>
-                <br/>
-                <p style={{fontSize:'8px'}}>Message</p>
+                
+                <Typography className="active-tv-font" style={{fontSize:'8px',margin:'30px 0 0 0'}}>Message</Typography>
                 <input style={{width:'100%',border:'1px white solid',backgroundColor:'white',height:'80px',color:'black',padding:'0 5px',fontStyle:"italic"}}  type="text" placeholder="What is your message?"></input>
-                <br/>
-                <br/>
-                <button style={{backgroundColor:'yellow',width:'100%',height:"40px",border:'none'}}>Sumit</button>
+                
+                <button style={{backgroundColor:'yellow',width:'100%',height:"40px",border:'none',margin:'30px 0 0 0'}}>Sumit</button>
             </Box>
                  </Box>
 
@@ -80,14 +83,16 @@ const styles = {
       alignItems: "center",
       width: "100%",
       justifyContent: "center",
-      padding:'30px 0'
+      // padding:'30px 0'
+      background: "url('login-bg.jpg')",
+      padding:'90px 0'
     },
     contentBox: {
       width: "700px",
-      background: "black",
-      opacity: 0.99,
+      background: "rgba(0,0,0,0.5)",
+      opacity: 0.7,
       height: "950px",
-      padding: "100px 90px",
+      padding: "110px 90px",
       flexDirection: "column",
       
     //   color:"white",

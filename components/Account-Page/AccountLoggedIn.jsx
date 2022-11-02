@@ -71,20 +71,20 @@ const AccountLoggedIn = () => {
 
             </Grid>
             <Grid sx={styles.gridItem} item md={5.5}>
-               <Typography style={{margin:'-15px 0 0 0'}} className="active-tv-font" variant="h3" fontSize={10}>
+               <Typography style={{margin:'-5px 0 0 0'}} className="active-tv-font" variant="h3" fontSize={10}>
                 
                {
                   edit? <Box>
                   <input className="active-tv-font" value={header} onBlur={()=>setEdit(false)} onChange={(e) => setHeader(e.target.value)} style={{width:'100%',border:'1px white solid',backgroundColor:'transparent',border:"none",height:'40px',color:'white',padding:'0 5px',fontStyle:"italic",fontSize:10}}  type="text" placeholder="Edit"></input>
-              </Box>: <> { header }<EditIcon onClick={()=>setEdit(!edit)}/> </>
+              </Box>: <> { header }<EditIcon sx={{height:"20px",width:"20px",margin:'-6px 0 0 5px'}} onClick={()=>setEdit(!edit)}/> </>
                 }
                 {/* {displayName} */}
               </Typography>
-              <Typography sx={{margin:'-4px 0 0 0'}} className="active-tv-font" variant="h3" fontSize={10}>
+              <Typography sx={{margin:'0 0 0 0'}} className="active-tv-font" variant="h3" fontSize={10}>
               {
                   editwo? <Box>
                   <input className="active-tv-font" value={headertwo} onBlur={()=>setEditTwo(false)} onChange={(e) => setHeaderTwo(e.target.value)} style={{width:'100%',border:'1px white solid',backgroundColor:'transparent',border:"none",height:'40px',color:'white',padding:'0 5px',fontStyle:"italic",fontSize:10}}  type="text" placeholder="Edit"></input>
-              </Box>: <> { headertwo }<EditIcon onClick={()=>setEditTwo(!editwo)}/> </>
+              </Box>: <> { headertwo }<EditIcon sx={{height:"20px",width:"20px",margin:'0 0 0 5px'}} onClick={()=>setEditTwo(!editwo)}/> </>
                 }
                 {/* {AuthenticatedUser.name} */}
               </Typography>
@@ -140,7 +140,7 @@ const AccountLoggedIn = () => {
               </Typography>
             </Grid>
             <Grid sx={styles.gridItem} item md={5.5}>
-              <Typography  style={{margin:'-12px 0 0 0'}}
+              <Typography  style={{margin:'-5px 0 0 0'}}
                 sx={{ marginBottom: 1 }}
                 className="active-tv-font"
                 variant="h3"
@@ -148,15 +148,15 @@ const AccountLoggedIn = () => {
               > {
                 edithree? <Box>
                 <input className="active-tv-font" value={headerthree} onBlur={()=>setEditThree(false)} onChange={(e) => setHeaderThree(e.target.value)} style={{width:'100%',border:'1px white solid',backgroundColor:'transparent',border:"none",height:'40px',color:'white',padding:'0 5px',fontStyle:"italic",fontSize:10}}  type="text" placeholder="Edit"></input>
-            </Box>: <> { headerthree }<EditIcon onClick={()=>setEditThree(!edithree)}/> </>
+            </Box>: <> { headerthree }<EditIcon sx={{height:"20px",width:"20px",margin:'-6px 0 0 5px'}} onClick={()=>setEditThree(!edithree)}/> </>
               }
                 
               </Typography>
-              <Typography  style={{margin:'-4px 0 0 0'}} className="active-tv-font" variant="h3" fontSize={10}>
+              <Typography  style={{margin:'0 0 0 0'}} className="active-tv-font" variant="h3" fontSize={10}>
               {
                 editfour? <Box>
                 <input className="active-tv-font" value={headerfour} onBlur={()=>setEditFour(false)} onChange={(e) => setHeaderFour(e.target.value)} style={{width:'100%',border:'1px white solid',backgroundColor:'transparent',border:"none",height:'40px',color:'white',padding:'0 5px',fontStyle:"italic",fontSize:10}}  type="text" placeholder="Edit"></input>
-            </Box>: <> { headerfour }<EditIcon onClick={()=>setEditFour(!editfour)}/> </>
+            </Box>: <> { headerfour }<EditIcon sx={{height:"20px",width:"20px",margin:'0 0 0 5px'}} onClick={()=>setEditFour(!editfour)}/> </>
               }
               </Typography>
             </Grid>
