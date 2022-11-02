@@ -2,14 +2,26 @@ import React, { useState } from "react";
 import { Box } from "@mui/system";
 import Link from "next/link";
 import Form from "./Form";
-import CorridorStore from "./CorridorStore";
 import FormTwo from "./FormTwo";
+import CorridorStore from "./CorridorStore";
+
 
 
 const ContactUs = () => {
-  const [form,setForm] = useState(false) 
-  const [formtwo,setFormTwo] = useState(false)
-  const [store,setStore] = useState(false)
+  const [form,setForm] = useState('no form')
+  switch(form){
+    case 'form1':
+        return(<Form />)
+
+    case 'form2':
+            return(<FormTwo />)
+
+    case 'form3':
+        return(<CorridorStore />)
+}
+
+
+
   
   
     return ( 
@@ -24,16 +36,16 @@ const ContactUs = () => {
                  <p style={{fontSize:'8px'}}>Please select the appropriate service you wish to contact:</p>
                  
                  <Box style={{fontSize:'8px'}}>
-                 <input onClick={() => setForm(true)} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Website Feedback
+                 <input onClick={() => setForm('form1')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Website Feedback
                  <br/>
                  <br/>
-                 <input onClick={() => setStore(true)}  style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Corridor Digital Store
+                 <input onClick={() => setForm('form3')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Corridor Digital Store
                  <br/>
                  <br/>
-                 <input onClick={() => setForm(true)} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Business Enquiries
+                 <input onClick={() => setForm('form1')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Business Enquiries
                  <br/>
                  <br/>
-                 <input onClick={() => setFormTwo(true)} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Copyright Infringement
+                 <input onClick={() => setForm('form2')} style={{margin:"10px 0 0 0",}} type="radio" id="html" name="fav_language" value="HTML"></input> Copyright Infringement
                   
                  </Box>
                  {/* <button onClick={()=>setForm(false)}>hide</button> */}
@@ -41,7 +53,8 @@ const ContactUs = () => {
                  
                  
             </Box>  
-            {
+            
+            {/* {
                     store? <CorridorStore/>: ""
                   } 
             {
@@ -49,10 +62,11 @@ const ContactUs = () => {
             }
             {
               formtwo? <FormTwo />: ""
-            }
+            } */}
            
 
         </Box>
+        
      );
 }
  

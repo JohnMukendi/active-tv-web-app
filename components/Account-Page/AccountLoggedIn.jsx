@@ -5,6 +5,7 @@ import { useState, useContext } from "react";
 import { Grid } from "@mui/material";
 import { USER_CONTEXT } from "../../context/MainContext";
 import DeleteModal from './deleteModal'
+import EditIcon from '@mui/icons-material/Edit';
 
 const AccountLoggedIn = () => {
   const { AuthenticatedUser,displayName } = useContext(USER_CONTEXT); //pulling out the current authenticated user
@@ -13,6 +14,20 @@ const AccountLoggedIn = () => {
 
  const [open, setOpen] = React.useState(false);
 
+
+ const [edit,setEdit] = useState(false);
+ const [editwo,setEditTwo] = useState(false);
+ const [edithree,setEditThree] = useState(false);
+ const [editfour,setEditFour] = useState(false);
+ const [editfive,setEditFive] = useState(false);
+
+
+ // let name = 'Profile';
+ const [header,setHeader] = useState('Display Name');
+ const [headertwo,setHeaderTwo] = useState('Email');
+ const [headerthree,setHeaderThree] = useState('You dont seem to have a subscription!');
+ const [headerfour,setHeaderFour] = useState('Have an active Patreon membership?');
+ const [headerFive,setHeaderFive] = useState('Need Help?');
   return (
     <Box className={"active-tv-font"} sx={styles.container}>
 
@@ -56,11 +71,22 @@ const AccountLoggedIn = () => {
 
             </Grid>
             <Grid sx={styles.gridItem} item md={5.5}>
-               <Typography  className="active-tv-font" variant="h3" fontSize={10}>
-                {displayName}
+               <Typography style={{margin:'-15px 0 0 0'}} className="active-tv-font" variant="h3" fontSize={10}>
+                
+               {
+                  edit? <Box>
+                  <input className="active-tv-font" value={header} onBlur={()=>setEdit(false)} onChange={(e) => setHeader(e.target.value)} style={{width:'100%',border:'1px white solid',backgroundColor:'transparent',border:"none",height:'40px',color:'white',padding:'0 5px',fontStyle:"italic",fontSize:10}}  type="text" placeholder="Edit"></input>
+              </Box>: <> { header }<EditIcon onClick={()=>setEdit(!edit)}/> </>
+                }
+                {/* {displayName} */}
               </Typography>
-              <Typography sx={{margin:'10px 0'}} className="active-tv-font" variant="h3" fontSize={10}>
-                {AuthenticatedUser.name}
+              <Typography sx={{margin:'-4px 0 0 0'}} className="active-tv-font" variant="h3" fontSize={10}>
+              {
+                  editwo? <Box>
+                  <input className="active-tv-font" value={headertwo} onBlur={()=>setEditTwo(false)} onChange={(e) => setHeaderTwo(e.target.value)} style={{width:'100%',border:'1px white solid',backgroundColor:'transparent',border:"none",height:'40px',color:'white',padding:'0 5px',fontStyle:"italic",fontSize:10}}  type="text" placeholder="Edit"></input>
+              </Box>: <> { headertwo }<EditIcon onClick={()=>setEditTwo(!editwo)}/> </>
+                }
+                {/* {AuthenticatedUser.name} */}
               </Typography>
             </Grid>
             <Grid sx={{ ...styles.gridItem, ...styles.lastGrid }} item md={3}>
@@ -114,16 +140,24 @@ const AccountLoggedIn = () => {
               </Typography>
             </Grid>
             <Grid sx={styles.gridItem} item md={5.5}>
-              <Typography
+              <Typography  style={{margin:'-12px 0 0 0'}}
                 sx={{ marginBottom: 1 }}
                 className="active-tv-font"
                 variant="h3"
                 fontSize={10}
-              >
-                You don't seem to have a subscription!
+              > {
+                edithree? <Box>
+                <input className="active-tv-font" value={headerthree} onBlur={()=>setEditThree(false)} onChange={(e) => setHeaderThree(e.target.value)} style={{width:'100%',border:'1px white solid',backgroundColor:'transparent',border:"none",height:'40px',color:'white',padding:'0 5px',fontStyle:"italic",fontSize:10}}  type="text" placeholder="Edit"></input>
+            </Box>: <> { headerthree }<EditIcon onClick={()=>setEditThree(!edithree)}/> </>
+              }
+                
               </Typography>
-              <Typography className="active-tv-font" variant="h3" fontSize={10}>
-                Have an active Patreon membership?
+              <Typography  style={{margin:'-4px 0 0 0'}} className="active-tv-font" variant="h3" fontSize={10}>
+              {
+                editfour? <Box>
+                <input className="active-tv-font" value={headerfour} onBlur={()=>setEditFour(false)} onChange={(e) => setHeaderFour(e.target.value)} style={{width:'100%',border:'1px white solid',backgroundColor:'transparent',border:"none",height:'40px',color:'white',padding:'0 5px',fontStyle:"italic",fontSize:10}}  type="text" placeholder="Edit"></input>
+            </Box>: <> { headerfour }<EditIcon onClick={()=>setEditFour(!editfour)}/> </>
+              }
               </Typography>
             </Grid>
             <Grid sx={{ ...styles.gridItem,...styles.lastGrid }} item md={3}>
